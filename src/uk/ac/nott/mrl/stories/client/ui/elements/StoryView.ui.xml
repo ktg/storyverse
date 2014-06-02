@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="en">
+	<ui:style>	
+		.title {
+			font-size: 24px;
+			margin-bottom: 5px;
+			color: #333;
+		}
+	</ui:style>
+	<g:FlowPanel>
+		<g:Label ui:field="title" styleName="{style.title}"/>	
+		<g:Label ui:field="text"/>
+		<g:Label ui:field="author" />
+		<g:FlowPanel ui:field="tags" />
+	</g:FlowPanel>
+</ui:UiBinder>

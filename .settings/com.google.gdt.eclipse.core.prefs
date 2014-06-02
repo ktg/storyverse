@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+jarsExcludedFromWebInfLib=D\:/ktg/workspace/storyverse/lib/appengine-api-stubs.jar|D\:/ktg/workspace/storyverse/lib/appengine-testing.jar|D\:/ktg/workspace/storyverse/lib/guava-gwt-12.0.jar|D\:/ktg/workspace/storyverse/lib/gwt-codeserver.jar
+warSrcDir=war
+warSrcDirIsOutput=true

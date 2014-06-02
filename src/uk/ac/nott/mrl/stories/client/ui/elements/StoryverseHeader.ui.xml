@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="en">
+	<ui:style>
+		.title {
+			font-size: 30px;
+		}
+		
+		.login {
+			float: right;
+		}
+	</ui:style>
+	<g:FlowPanel><g:Anchor styleName="{style.login}" ui:field="anchor"/><g:Label styleName="{style.title}">Storyverse</g:Label></g:FlowPanel>
+</ui:UiBinder>

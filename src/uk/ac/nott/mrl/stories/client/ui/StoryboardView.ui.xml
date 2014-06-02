@@ -1,0 +1,77 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:l="urn:import:org.wornchaos.client.ui.layout"
+	xmlns:s="urn:import:uk.ac.nott.mrl.stories.client.ui.elements"
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="en">
+	<ui:style type='uk.ac.nott.mrl.stories.client.ui.StoryboardView.Style'>
+		.panel {
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			overflow-x: hidden;
+		}
+		
+		.button {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			padding: 5px 10px;
+			z-index: 5;
+			width: 5%;
+			font-size: 40px;
+			color: #999;
+			background-color: transparent;
+			border: 0px;
+			cursor: pointer;
+			transition: all 0.5s;
+			-moz-transition: all 0.5s; /* Firefox 4 */
+			-webkit-transition: all 0.5s; /* Safari and Chrome */
+			-o-transition: all 0.5s; /* Opera */
+		}
+		
+		.prev {
+			left: 0;
+		}
+		
+		.next {
+			right: 0;
+		}
+		
+		.button:hover {
+			color: #555;
+			background: rgba(0, 0, 0, 0.1);
+		}
+		
+		.story {
+			position: absolute;
+			padding: 30px;
+			background: white;
+			white-space: pre-wrap;
+			border: 1px solid #EEE;
+			border-radius: 10px;
+			box-shadow: 2px 2px 5px #888;
+			font-size: 14px;
+			box-sizing: border-box;
+			transition: all 1s;
+			-moz-transition: all 1s; /* Firefox 4 */
+			-webkit-transition: all 1s; /* Safari and Chrome */
+			-o-transition: all 1s; /* Opera */
+		}
+	</ui:style>
+	<g:FlowPanel styleName="{style.panel}">
+		<l:LayoutPanel ui:field="stories">
+			<s:StoryboardImageView ui:field="image" />
+			<s:StoryboardQAView first="true" ui:field="firstQ">What’s the connection between the stories?</s:StoryboardQAView>
+			<s:StoryboardQAView first="false" ui:field="secondQ">What’s the connection between the image and the stories?</s:StoryboardQAView>
+			<s:StoryEditView ui:field="storyEdit"/>
+		</l:LayoutPanel>
+		<g:Button ui:field="prev" styleName="{style.prev}"
+			addStyleNames="{style.button}">‹</g:Button>
+		<g:Button ui:field="next" styleName="{style.next}"
+			addStyleNames="{style.button}">›</g:Button>
+	</g:FlowPanel>
+</ui:UiBinder>

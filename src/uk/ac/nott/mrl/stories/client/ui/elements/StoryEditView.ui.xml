@@ -1,0 +1,46 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="en">
+	<ui:style>
+		.storyPanel {
+			margin: 10px;
+			padding: 3px;
+			background: #EEE;
+			white-space: pre-wrap;
+		}
+		
+		.label {
+			width: 100%;
+			font-size: 24px;
+			margin-bottom: 5px;
+			color: #333;
+		}
+		
+		.title {
+			width: 100%;
+			font-size: 24px;
+			margin-bottom: 5px;
+			color: #333;
+			border: 1px solid #FFF;			
+		}
+		
+		.title:HOVER, .text:HOVER, .title:ACTIVE, .text:ACTIVE {
+			border: 1px solid #888;
+		}
+		
+		.text {
+			width: 100%;
+			border: 1px solid #AAA;
+			height: 100px;
+			font-family: Arial Unicode MS, Arial, sans-serif;
+			font-size: 14px;			
+		}
+	</ui:style>
+	<g:FlowPanel styleName="{style.storyPanel}">
+		<g:Label styleName="{style.label}">What story would you tell alongside these stories and this image?</g:Label>
+		<g:FlowPanel><g:TextBox styleName="{style.title}" ui:field="title" /></g:FlowPanel>
+		<g:FlowPanel><g:TextArea styleName="{style.text}" ui:field="text"/></g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder>

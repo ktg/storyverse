@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:s="urn:import:uk.ac.nott.mrl.stories.client.ui.elements" xmlns:w="urn:import:org.wornchaos.client.ui"
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="en">
+	<ui:style>
+	</ui:style>
+	<g:FlowPanel>
+		<w:StatusIndicator ui:field="status"/>
+		<g:TextBox ui:field="title" />
+		<g:FlowPanel><g:TextArea ui:field="text" /></g:FlowPanel>
+		<g:Label ui:field="wordCount" />
+		<g:FlowPanel ui:field="tags">
+		</g:FlowPanel>
+		<g:TextBox ui:field="tagText" />
+		<g:Button ui:field="addTag">Add Tag</g:Button> 
+	</g:FlowPanel>
+</ui:UiBinder>

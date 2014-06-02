@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<display-name>Storyverse</display-name>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+		<init-param>
+			<param-name>services</param-name>
+			<param-value />
+		</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.wornchaos.server.JSONServerDispatcher</servlet-class>
+		<init-param>
+			<param-name>serverClass</param-name>
+			<param-value>uk.ac.nott.mrl.stories.server.ServerImpl</param-value>
+		</init-param>
+		<init-param>
+			<param-name>serverInterface</param-name>
+			<param-value>uk.ac.nott.mrl.stories.model.Server</param-value>
+		</init-param>
+		<init-param>
+			<param-name>parser</param-name>
+			<param-value>uk.ac.nott.mrl.stories.server.ServerParser</param-value>
+		</init-param>		
+		<load-on-startup>1</load-on-startup>		
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>selectionItem</display-name>
+		<servlet-name>selectionItem</servlet-name>
+		<servlet-class>uk.ac.nott.mrl.stories.server.GetSelectionItem</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>upload</display-name>
+		<servlet-name>upload</servlet-name>
+		<servlet-class>uk.ac.nott.mrl.stories.server.UploadSelectionItem</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>selectionItem</servlet-name>
+		<url-pattern>/selectionItem</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>ObjectifyFilter</filter-name>
+		<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="stories">
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.google.gwt.user.theme.clean.Clean" />
+	<inherits name="com.google.gwt.json.JSON" />
+	<inherits name="com.google.gwt.i18n.I18N"/>	
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.place.Place" />
+
+	<inherits name="org.wornchaos.Utils" />
+
+	<entry-point class="uk.ac.nott.mrl.stories.client.Storyverse" />
+
+	<source path="client" />
+	<source path="model" />
+
+	<add-linker name="xsiframe"/>
+	<set-configuration-property name="devModeRedirectEnabled" value="true"/>
+</module>
